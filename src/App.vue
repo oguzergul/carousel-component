@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Carousel from '../../vue-image-slider/src/Carousel.vue';
-import CarouselSlide from '../../vue-image-slider/src/CarouselSlide';
+import Carousel from './components/Slide.vue';
+import CarouselSlide from './components/CustomSlider';
 
 export default {
   data(){
