@@ -1,12 +1,23 @@
 <template>
   <div class="carousel" @keydown="checkSlide($event)" tabindex="0">
     <slot></slot>
-    <button @click.prevent="next" class="btn btn-next">></button>
-    <button @click.prevent="prev" class="btn btn-prev"><</button>
+    <button @click.prevent="next" class="btn btn-next">
+      <IconArrowRight/>
+    </button>
+    <button @click.prevent="prev" class="btn btn-prev">
+      <IconArrowLeft/>
+    </button>
   </div>
 </template>
 <script>
+import IconArrowLeft from '../assets/icons/left-arrow.svg'
+import IconArrowRight from '../assets/icons/right-arrow.svg'
+
 export default {
+  components: {
+    IconArrowLeft,
+    IconArrowRight
+  },
   data() {
     return {
       index: 0,
@@ -45,13 +56,8 @@ export default {
         this.next();
       } else if (event.keyCode === 37) {
         this.prev();
-      } else {
-        return;
-      }
+      } else return
     },
   }
 }
 </script>
-<style>
-
-</style>
